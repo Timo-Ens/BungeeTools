@@ -1,0 +1,12 @@
+name: Bungeetools
+version: ${project.version}
+main: nl.itimo.bungeetools.Bungeetools
+description: Bungeecord plugin that provides tools for staff and players
+author: ZakPatat
+commands:
+  message:
+    aliases:
+      - msg
+  reply:
+    aliases:
+      - r
