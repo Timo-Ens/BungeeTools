@@ -10,9 +10,7 @@ public abstract class Module<T extends Bungeetools> implements ModuleInterface<T
     private boolean isEnabled;
 
     public Module(T api, String name) throws ModuleAlreadyInitializedException {
-        if (api.modules.stream().anyMatch(module -> {
-            return module.getClass().getName().equalsIgnoreCase(this.uid);
-        })) {
+        if (api.modules.stream().anyMatch(module -> module.getClass().getName().equalsIgnoreCase(this.uid))) {
             throw new ModuleAlreadyInitializedException("The module " + name + " is already initialized.");
         } else{
             this.api = api;

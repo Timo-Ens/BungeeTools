@@ -24,7 +24,6 @@ public class GlobalMsgModule extends Module<Bungeetools> {
                 new MessageCommand(this),
                 new ReplyCommand(this)
         );
-
     }
 
     public void onDisable() {

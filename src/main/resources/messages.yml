@@ -1,0 +1,5 @@
+messages:
+  usage: "&ePlease use: &7[usage]"
+  msg_format: "&8[&7[sender] -> [reciever]&8] &7[message]"
+  player_offline: "&eSorry, at this moment &7[player] &eis not online."
+  no_conversation: "&eIt seems like you don't have a conversation yet."
