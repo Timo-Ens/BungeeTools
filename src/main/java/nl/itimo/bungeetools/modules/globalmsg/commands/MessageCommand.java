@@ -18,11 +18,6 @@ public class MessageCommand extends Command implements TabExecutor {
 
     private final GlobalMsgModule globalMsgModule;
 
-    public MessageCommand(GlobalMsgModule globalMsgModule) {
-        super("message", "", "msg");
-        this.globalMsgModule = globalMsgModule;
-    }
-
     public MessageCommand(GlobalMsgModule globalMsgModule, String permission) {
         super("message", permission, "msg");
         this.globalMsgModule = globalMsgModule;

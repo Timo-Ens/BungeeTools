@@ -1,6 +1,5 @@
 package nl.itimo.bungeetools.modules.globalmsg.commands;
 
-import com.google.common.collect.ImmutableSet;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.ComponentBuilder;
@@ -9,17 +8,9 @@ import net.md_5.bungee.api.plugin.Command;
 import nl.itimo.bungeetools.modules.globalmsg.GlobalMsgModule;
 import nl.itimo.bungeetools.utils.Messages;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class ReplyCommand extends Command {
 
     private final GlobalMsgModule globalMsgModule;
-
-    public ReplyCommand(GlobalMsgModule globalMsgModule) {
-        super("reply", "", "r");
-        this.globalMsgModule = globalMsgModule;
-    }
 
     public ReplyCommand(GlobalMsgModule globalMsgModule, String permission) {
         super("reply", permission, "r");

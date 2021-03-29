@@ -6,11 +6,16 @@ import nl.itimo.bungeetools.Bungeetools;
 
 public enum Messages {
 
-
+    // General
     USAGE("messages.usage"),
-    MSG_FORMAT("messages.msg_format"),
     PLAYER_OFFLINE("messages.player_offline"),
-    NO_CONVERSATION("messages.no_conversation");
+
+    //Global Message
+    NO_CONVERSATION("messages.message.no_conversation"),
+    MSG_FORMAT("messages.message.msg_format"),
+
+    //Staffchat
+    STAFFCHAT_FORMAT("messages.staffchat.staffchat_format");
 
     private final Bungeetools bungeetools = (Bungeetools) ProxyServer.getInstance().getPluginManager().getPlugin("Bungeetools");
     private final String path;
