@@ -3,7 +3,6 @@ package nl.itimo.bungeetools;
 import io.github.classgraph.ClassGraph;
 import io.github.classgraph.ClassInfo;
 import io.github.classgraph.ScanResult;
-import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -15,7 +14,6 @@ import nl.itimo.bungeetools.modules.Module;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +29,6 @@ public final class Bungeetools extends Plugin {
     public void onEnable() {
         setupConfig();
         loadModules();
-        modules.forEach(Module::disable);
     }
 
     @Override
@@ -46,7 +43,6 @@ public final class Bungeetools extends Plugin {
     public void unregisterListener(Listener... listeners) {
         Arrays.stream(listeners).forEach(listener -> getProxy().getPluginManager().unregisterListener(listener));
     }
-
 
     public void registerCommands(Command... commands) {
         Arrays.stream(commands).forEach(command -> getProxy().getPluginManager().registerCommand(this, command));
