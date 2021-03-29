@@ -13,13 +13,15 @@ import java.util.UUID;
 @AutoloadModule
 public class GlobalMsgModule extends Module<Bungeetools> {
 
-    private HashMap<UUID, UUID> playerConversations = new HashMap<>();
+    private final HashMap<UUID, UUID> playerConversations = new HashMap<>();
 
     public GlobalMsgModule(Bungeetools api) throws ModuleAlreadyInitializedException {
         super(api, "Global Msg");
     }
 
     public void onEnable() {
+
+
         getApi().registerCommands(
                 new MessageCommand(this),
                 new ReplyCommand(this)
