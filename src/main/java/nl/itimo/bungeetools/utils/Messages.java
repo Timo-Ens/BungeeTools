@@ -23,7 +23,7 @@ public enum Messages {
 
     // Report
     REPORT_FORMAT("messages.report.format"),
-    SUCCESS("messages.report.success");
+    REPORT_SUCCESS("messages.report.success");
 
     private final Bungeetools bungeetools = (Bungeetools) ProxyServer.getInstance().getPluginManager().getPlugin("Bungeetools");
     private final String path;

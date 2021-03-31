@@ -50,6 +50,11 @@ public class ReportCommand extends Command implements TabExecutor {
         for (int i = 1; i < args.length; i++)
             stringBuilder.append(args[i]).append(" ");
 
+        player.sendMessage(Messages.REPORT_SUCCESS.getMessageAsComponent(
+                "[player]:" + reportedPlayer.getName(),
+                "[reason]:" + stringBuilder.toString()
+        ));
+
         for (ProxiedPlayer proxiedPlayer : this.reportModule.getApi().getProxy().getPlayers()){
             if(!this.reportModule.getRecieverPermission().equals("")){
                 if(!proxiedPlayer.hasPermission(this.reportModule.getRecieverPermission())) continue;
@@ -64,7 +69,7 @@ public class ReportCommand extends Command implements TabExecutor {
 
     @Override
     public Iterable<String> onTabComplete(CommandSender sender, String[] args) {
-        if (args.length > 2 || args.length == 0) return ImmutableSet.of();
+        if (args.length != 1) return ImmutableSet.of();
         Set<String> matches = new HashSet<>();
         String search = args[0].toLowerCase();
         ProxyServer.getInstance().getPlayers().stream().filter(proxiedPlayer -> proxiedPlayer.getName().startsWith(search))
