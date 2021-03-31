@@ -2,8 +2,13 @@ messages:
   usage: "&ePlease use: &7[usage]"
   player_offline: "&eSorry, at this moment &7[player] &eis not online."
   message:
-    msg_format: "&8[&7[sender] -> [reciever]&8] &7[message]"
+    format: "&8[&7[sender] -> [reciever]&8] &7[message]"
     no_conversation: "&eIt seems like you don't have a conversation yet."
   staffchat:
-    staffchat_format: "&eStaffChat &8[&7[server]&8] &e[sender]&8: &7[message] "
+    format: "&eStaffChat &8[&7[server]&8] &e[sender]&8: &7[message] "
+    enabled: "&aYou are now talking in &2staffchat."
+    disabled: "&aYou are now talking in &2normal chat"
+    muted: "&aYou muted the staffchat"
+    unmuted: "&aYou unmuted the staffchat"
+
 

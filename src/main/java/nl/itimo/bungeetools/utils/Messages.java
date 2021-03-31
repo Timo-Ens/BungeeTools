@@ -12,10 +12,14 @@ public enum Messages {
 
     //Global Message
     NO_CONVERSATION("messages.message.no_conversation"),
-    MSG_FORMAT("messages.message.msg_format"),
+    MSG_FORMAT("messages.message.format"),
 
     //Staffchat
-    STAFFCHAT_FORMAT("messages.staffchat.staffchat_format");
+    STAFFCHAT_FORMAT("messages.staffchat.format"),
+    STAFFCHAT_MUTED("messages.staffchat.muted"),
+    STAFFCHAT_UNMUTED("messages.staffchat.unmuted"),
+    STAFFCHAT_ENABLED("messages.staffchat.enabled"),
+    STAFFCHAT_DISABLED("messages.staffchat.disabled");
 
     private final Bungeetools bungeetools = (Bungeetools) ProxyServer.getInstance().getPluginManager().getPlugin("Bungeetools");
     private final String path;

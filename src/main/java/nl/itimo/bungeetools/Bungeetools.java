@@ -89,7 +89,6 @@ public final class Bungeetools extends Plugin {
                              .enableAllInfo()
                              .acceptPackages(pkg)
                              .scan()) {
-            System.out.println(scanResult.getAllClasses().size());
             for (ClassInfo routeClassInfo : scanResult.getClassesWithAnnotation(routeAnnotation)) {
                 Object object;
                 try {

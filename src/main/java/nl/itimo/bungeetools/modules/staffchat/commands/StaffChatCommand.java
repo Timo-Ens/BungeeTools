@@ -7,12 +7,11 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.TabExecutor;
 import nl.itimo.bungeetools.modules.staffchat.StaffChatModule;
+import nl.itimo.bungeetools.utils.Messages;
 
 public class StaffChatCommand extends Command implements TabExecutor {
 
     private final StaffChatModule staffChatModule;
-    private final String[] options = new String[]{"toggle", "enable", "disable", "togglemute","mute", "unmute"};
-
 
     public StaffChatCommand(StaffChatModule staffChatModule, String permission) {
         super("staffchat", permission, "sc");
@@ -30,37 +29,45 @@ public class StaffChatCommand extends Command implements TabExecutor {
             if(args[0].equalsIgnoreCase("toggle")){
                 if (this.staffChatModule.getStaffchatUsers().contains(player.getUniqueId())) {
                     this.staffChatModule.getStaffchatUsers().remove(player.getUniqueId());
+                    player.sendMessage(Messages.STAFFCHAT_DISABLED.getMessageAsComponent());
                 } else {
                     this.staffChatModule.getStaffchatUsers().add(player.getUniqueId());
+                    player.sendMessage(Messages.STAFFCHAT_ENABLED.getMessageAsComponent());
                 }
             }
 
             if(args[0].equalsIgnoreCase("enable")){
                 if(this.staffChatModule.getStaffchatUsers().contains(player.getUniqueId())) return;
                 this.staffChatModule.getStaffchatUsers().add(player.getUniqueId());
+                player.sendMessage(Messages.STAFFCHAT_ENABLED.getMessageAsComponent());
             }
 
             if(args[0].equalsIgnoreCase("disable")){
                 if(!this.staffChatModule.getStaffchatUsers().contains(player.getUniqueId())) return;
                 this.staffChatModule.getStaffchatUsers().remove(player.getUniqueId());
+                player.sendMessage(Messages.STAFFCHAT_DISABLED.getMessageAsComponent());
             }
 
             if(args[0].equalsIgnoreCase("togglemute")){
                 if (this.staffChatModule.getStaffchatUsersMuted().contains(player.getUniqueId())) {
                     this.staffChatModule.getStaffchatUsersMuted().remove(player.getUniqueId());
+                    player.sendMessage(Messages.STAFFCHAT_MUTED.getMessageAsComponent());
                 } else {
                     this.staffChatModule.getStaffchatUsersMuted().add(player.getUniqueId());
+                    player.sendMessage(Messages.STAFFCHAT_UNMUTED.getMessageAsComponent());
                 }
             }
 
             if(args[0].equalsIgnoreCase("mute")){
                 if(this.staffChatModule.getStaffchatUsersMuted().contains(player.getUniqueId())) return;
                 this.staffChatModule.getStaffchatUsersMuted().add(player.getUniqueId());
+                player.sendMessage(Messages.STAFFCHAT_MUTED.getMessageAsComponent());
             }
 
             if(args[0].equalsIgnoreCase("unmute")){
                 if(!this.staffChatModule.getStaffchatUsersMuted().contains(player.getUniqueId())) return;
                 this.staffChatModule.getStaffchatUsersMuted().remove(player.getUniqueId());
+                player.sendMessage(Messages.STAFFCHAT_UNMUTED.getMessageAsComponent());
             }
         }
 
