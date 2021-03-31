@@ -1,3 +1,11 @@
-###################################################
-# BungeeTools -
-Test: "Works"
+# Hi there
+# BungeeTools - Bungeecord plugin that provides tools for staff and players
+modules:
+  globalmsg:
+    enabled: true
+    # If it's set to "" there is no permission. Default = ""
+    permission: ""
+  staffchat:
+    enabled: true
+    # If it's set to "" there is no permission. Default = "bungeetools.staffchat"
+    permission: "bungeetools.staffchat"

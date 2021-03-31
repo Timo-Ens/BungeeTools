@@ -81,7 +81,6 @@ public final class Bungeetools extends Plugin {
         }
     }
 
-
     private void loadModules() {
         String pkg = "nl.itimo.bungeetools.modules";
         String routeAnnotation = pkg + ".AutoloadModule";
@@ -90,19 +89,20 @@ public final class Bungeetools extends Plugin {
                              .enableAllInfo()
                              .acceptPackages(pkg)
                              .scan()) {
-            System.out.println(scanResult.getAllClasses().size());
             for (ClassInfo routeClassInfo : scanResult.getClassesWithAnnotation(routeAnnotation)) {
-                Object module;
+                Object object;
                 try {
-                    module = routeClassInfo.loadClass().getDeclaredConstructor(this.getClass()).newInstance(this);
+                    object = routeClassInfo.loadClass().getDeclaredConstructor(this.getClass()).newInstance(this);
                 } catch (Exception e) {
                     this.getLogger().severe("Something went wrong while registering module  class" + routeClassInfo.getName());
                     e.printStackTrace();
                     return;
                 }
-                Module module1 = (Module<?>) module;
-                module1.enable();
-                modules.add(module1);
+                Module module = (Module<?>) object;
+                if(configuration.getBoolean("modules." + ((Module<?>) module).getName().toLowerCase() + ".enabled")){
+                    module.enable();
+                }
+                modules.add(module);
             }
         }
     }

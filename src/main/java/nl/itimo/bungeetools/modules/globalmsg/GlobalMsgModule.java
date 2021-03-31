@@ -13,23 +13,29 @@ import java.util.UUID;
 @AutoloadModule
 public class GlobalMsgModule extends Module<Bungeetools> {
 
-    private HashMap<UUID, UUID> playerConversations = new HashMap<>();
+    private final HashMap<UUID, UUID> playerConversations = new HashMap<>();
+    private String permission;
 
     public GlobalMsgModule(Bungeetools api) throws ModuleAlreadyInitializedException {
-        super(api, "Global Msg");
+        super(api, "GlobalMsg");
+    }
+
+    public String getPermission() {
+        return permission;
     }
 
     public void onEnable() {
+        this.permission = getApi().configuration.getString("modules.globalmsg.permission");
         getApi().registerCommands(
-                new MessageCommand(this),
-                new ReplyCommand(this)
+                new MessageCommand(this, this.permission),
+                new ReplyCommand(this, this.permission)
         );
     }
 
     public void onDisable() {
         getApi().unregisterCommands(
-                new MessageCommand(this),
-                new ReplyCommand(this)
+                new MessageCommand(this, ""),
+                new ReplyCommand(this, "")
         );
     }
 

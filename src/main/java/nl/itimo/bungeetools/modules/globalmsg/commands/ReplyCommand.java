@@ -12,11 +12,6 @@ public class ReplyCommand extends Command {
 
     private final GlobalMsgModule globalMsgModule;
 
-    public ReplyCommand(GlobalMsgModule globalMsgModule) {
-        super("reply", "", "r");
-        this.globalMsgModule = globalMsgModule;
-    }
-
     public ReplyCommand(GlobalMsgModule globalMsgModule, String permission) {
         super("reply", permission, "r");
         this.globalMsgModule = globalMsgModule;
@@ -65,4 +60,6 @@ public class ReplyCommand extends Command {
                 "[message]:" + stringBuilder.toString()
         ));
     }
+
+
 }
