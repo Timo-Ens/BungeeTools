@@ -24,7 +24,7 @@ public class ChatListener implements Listener {
             event.setCancelled(true);
             for (ProxiedPlayer proxiedPlayer : this.staffChatModule.getApi().getProxy().getPlayers()){
                 if(!this.staffChatModule.getPermission().equals("")){
-                    if(proxiedPlayer.hasPermission(this.staffChatModule.getPermission())) continue;
+                    if(!proxiedPlayer.hasPermission(this.staffChatModule.getPermission())) continue;
                 }
                 if(this.staffChatModule.getStaffchatUsersMuted().contains(proxiedPlayer.getUniqueId())) continue;
                 proxiedPlayer.sendMessage(Messages.STAFFCHAT_FORMAT.getMessageAsComponent(

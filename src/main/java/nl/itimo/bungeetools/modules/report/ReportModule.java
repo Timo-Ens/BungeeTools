@@ -16,10 +16,6 @@ public class ReportModule extends Module<Bungeetools> {
         super(api, "Report");
     }
 
-    public String getPermission() {
-        return permission;
-    }
-
     public String getRecieverPermission() {
         return recieverPermission;
     }
@@ -30,12 +26,15 @@ public class ReportModule extends Module<Bungeetools> {
         this.recieverPermission = getApi().configuration.getString("modules.report.permission_recieve");
 
         getApi().registerCommands(
-                new ReportCommand(this, permission, recieverPermission)
+                new ReportCommand(this, permission)
         );
     }
 
     @Override
     public void onDisable() {
 
+        getApi().unregisterCommands(
+                new ReportCommand(this, "")
+        );
     }
 }

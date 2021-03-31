@@ -19,7 +19,11 @@ public enum Messages {
     STAFFCHAT_MUTED("messages.staffchat.muted"),
     STAFFCHAT_UNMUTED("messages.staffchat.unmuted"),
     STAFFCHAT_ENABLED("messages.staffchat.enabled"),
-    STAFFCHAT_DISABLED("messages.staffchat.disabled");
+    STAFFCHAT_DISABLED("messages.staffchat.disabled"),
+
+    // Report
+    REPORT_FORMAT("messages.report.format"),
+    SUCCESS("messages.report.success");
 
     private final Bungeetools bungeetools = (Bungeetools) ProxyServer.getInstance().getPluginManager().getPlugin("Bungeetools");
     private final String path;

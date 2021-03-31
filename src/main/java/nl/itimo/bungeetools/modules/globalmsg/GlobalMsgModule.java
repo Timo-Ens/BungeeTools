@@ -20,10 +20,6 @@ public class GlobalMsgModule extends Module<Bungeetools> {
         super(api, "GlobalMsg");
     }
 
-    public String getPermission() {
-        return permission;
-    }
-
     public void onEnable() {
         this.permission = getApi().configuration.getString("modules.globalmsg.permission");
         getApi().registerCommands(
