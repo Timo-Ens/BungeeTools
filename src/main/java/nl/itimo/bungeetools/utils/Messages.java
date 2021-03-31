@@ -41,9 +41,9 @@ public enum Messages {
     }
 
 
-    public TextComponent getMessageAsComponent(String... strings) {
+    public TextComponent getMessageAsComponent(String... replacements) {
         String message = getMessage();
-        for (String s : strings) {
+        for (String s : replacements) {
             String[] split = s.split(":");
             String key = split[0];
             String value = split[1];
