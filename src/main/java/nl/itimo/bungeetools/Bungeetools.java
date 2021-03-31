@@ -11,13 +11,12 @@ import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
 import nl.itimo.bungeetools.modules.Module;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Scanner;
 
 public final class Bungeetools extends Plugin {
 
@@ -60,8 +59,8 @@ public final class Bungeetools extends Plugin {
 
         File configFile = new File(getDataFolder(), "config.yml");
         try {
+            InputStream inputStream = getResourceAsStream("config.yml");
             if (!configFile.exists()) {
-                InputStream inputStream = getResourceAsStream("config.yml");
                 Files.copy(inputStream, configFile.toPath());
             }
             this.configuration = ConfigurationProvider.getProvider(YamlConfiguration.class).load(configFile);

@@ -1,11 +1,17 @@
-# Hi there
+# Hi there, welcome to the danger zone. No kidding you can't do anything wrong here (i hope).
 # BungeeTools - Bungeecord plugin that provides tools for staff and players
 modules:
   globalmsg:
     enabled: true
-    # If it's set to "" there is no permission. Default = ""
+    # Default = ""
     permission: ""
   staffchat:
     enabled: true
-    # If it's set to "" there is no permission. Default = "bungeetools.staffchat"
+    # Default = "bungeetools.staffchat"
     permission: "bungeetools.staffchat"
+  report:
+    enabled: true
+    # Default = ""
+    permission: ""
+    # The permission for the staff members to recieve the report. Default = bungeetools.report.recieve"
+    permission_recieve: "bungeetools.report.recieve"

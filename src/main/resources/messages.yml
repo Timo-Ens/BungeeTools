@@ -10,5 +10,11 @@ messages:
     disabled: "&aYou are now talking in &2normal chat"
     muted: "&aYou muted the staffchat"
     unmuted: "&aYou unmuted the staffchat"
+  report:
+    format: "&6&lReport -> \n
+    &eReporter: &7[reporter] \n
+    &ePlayer: &7[player] \n
+    &eReason: &7[reason]"
+    success: "&aYou have succesfully reported &2[player] &afor &2[reason]"
 
 

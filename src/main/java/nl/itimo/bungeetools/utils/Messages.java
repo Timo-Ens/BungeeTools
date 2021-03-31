@@ -19,7 +19,11 @@ public enum Messages {
     STAFFCHAT_MUTED("messages.staffchat.muted"),
     STAFFCHAT_UNMUTED("messages.staffchat.unmuted"),
     STAFFCHAT_ENABLED("messages.staffchat.enabled"),
-    STAFFCHAT_DISABLED("messages.staffchat.disabled");
+    STAFFCHAT_DISABLED("messages.staffchat.disabled"),
+
+    // Report
+    REPORT_FORMAT("messages.report.format"),
+    REPORT_SUCCESS("messages.report.success");
 
     private final Bungeetools bungeetools = (Bungeetools) ProxyServer.getInstance().getPluginManager().getPlugin("Bungeetools");
     private final String path;
@@ -41,9 +45,9 @@ public enum Messages {
     }
 
 
-    public TextComponent getMessageAsComponent(String... strings) {
+    public TextComponent getMessageAsComponent(String... replacements) {
         String message = getMessage();
-        for (String s : strings) {
+        for (String s : replacements) {
             String[] split = s.split(":");
             String key = split[0];
             String value = split[1];
